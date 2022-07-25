@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { SortablejsRoutingModule } from './sortablejs-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { ContainerComponent } from './components/container/container.component';
 
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ContainerComponent
   ],
   imports: [
     CommonModule,
