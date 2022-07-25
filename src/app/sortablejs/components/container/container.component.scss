@@ -1,0 +1,15 @@
+:host {
+  display: block;
+
+  div.list {
+
+    div.item {
+      position: relative;
+      padding: 8px 12px;
+      border: 1px solid #cacdd1;
+      user-select: none;
+      margin-bottom: -1px;
+      background-color: #fff;
+    }
+  }
+}

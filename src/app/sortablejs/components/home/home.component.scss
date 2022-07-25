@@ -2,12 +2,6 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  // div.list-group {
-  //   div.list-group-item {
-  //     padding: 8px 12px;
-  //     border: 1px solid #cacdd1;
-  //   }
-  // }
 
   div.list {
     width: 300px;
@@ -19,9 +13,10 @@
       user-select: none;
       margin-bottom: -1px;
       background-color: #fff;
-      // &:not(:last-of-type) {
-      //   border-bottom: none;
-      // }
     }
+  }
+
+  .container {
+    width: 300px;
   }
 }
