@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import * as  st from 'sortablejs';
+// import * as  st from 'sortablejs';
+import Sortable from 'sortablejs';
 
 // declare const Sortable: any;
 
@@ -17,11 +18,11 @@ export class HomeComponent implements OnInit {
     // Sortable.create(simpleList, { /* options */ });
     var el = document.getElementById('simpleList');
     // var sortable = Sortable.create(el!);
-    new (st as any).Sortable(el!, {
+    new Sortable(el!, {
       group: 'shared', // set both lists to same group
       animation: 150
     });
-    console.log('title:', (st as any).Sortable);
+    console.log('title:', Sortable);
   }
 
 }
