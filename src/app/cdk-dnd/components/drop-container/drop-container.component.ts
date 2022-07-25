@@ -43,7 +43,8 @@ export class DropContainerComponent implements IDropContainer, OnInit, OnDestroy
     this.opsat.deRegistryDropContainer(this.key);
   }
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: any) {
+    // drop(event: CdkDragDrop<string[]>) {
     // if (event.previousContainer === event.container) {
     //   moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     // } else {
