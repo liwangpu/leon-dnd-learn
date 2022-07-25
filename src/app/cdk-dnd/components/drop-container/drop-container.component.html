@@ -1,0 +1,9 @@
+<div class="container" cdkDropList (cdkDropListDropped)="drop($event)" [id]="key">
+  <div class="com" *ngFor="let item of done" cdkDrag>{{item}}</div>
+  <div class="content">
+    <ng-content></ng-content>
+  </div>
+  <p>{{key}}</p> 
+</div>
+<!-- <p>{{key}}</p> -->
+<!-- <ng-content></ng-content> -->
