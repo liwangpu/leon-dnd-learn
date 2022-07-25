@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-// import * as  st from 'sortablejs';
+import * as faker from 'faker';
 import Sortable from 'sortablejs';
 
 @Component({
@@ -10,6 +10,7 @@ import Sortable from 'sortablejs';
 })
 export class HomeComponent implements OnInit {
 
+  todos: Array<string> = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +23,10 @@ export class HomeComponent implements OnInit {
     // });
     // console.log('title:', Sortable);
 
+    for (let i = 0; i < 10; i++) {
+      this.todos.push(faker.random.words(2));
+    }
+
     new Sortable(document.getElementById('list1')!, {
       group: 'shared', // set both lists to same group
       animation: 150
@@ -33,4 +38,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  public addToList1(): void {
+    // console.log('todos:', this.todos);
+    this.todos.push(faker.random.words(2));
+  }
 }

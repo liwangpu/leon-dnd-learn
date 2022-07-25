@@ -1,22 +1,28 @@
 :host {
-  display: flex;
-  justify-content: space-between;
+  display: block;
   padding: 20px;
 
-  div.list {
-    width: 300px;
 
-    div.item {
-      position: relative;
-      padding: 8px 12px;
-      border: 1px solid #cacdd1;
-      user-select: none;
-      margin-bottom: -1px;
-      background-color: #fff;
+  div.content {
+    display: flex;
+    justify-content: space-between;
+
+    div.list {
+      width: 300px;
+
+      div.item {
+        position: relative;
+        padding: 8px 12px;
+        border: 1px solid #cacdd1;
+        user-select: none;
+        margin-bottom: -1px;
+        background-color: #fff;
+      }
     }
-  }
 
-  .container {
-    width: 300px;
+    .container {
+      width: 300px;
+    }
+
   }
 }
