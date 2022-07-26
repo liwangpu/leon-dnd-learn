@@ -1,5 +1,5 @@
-import { CdkDragMove } from '@angular/cdk/drag-drop';
-import { Component, OnInit, ChangeDetectionStrategy, ElementRef, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { CdkDragMove, CdkDropList } from '@angular/cdk/drag-drop';
+import { Component, OnInit, ChangeDetectionStrategy, ElementRef, OnDestroy, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { SubSink } from 'subsink';
 import { debounceTime, delay, distinct, distinctUntilChanged, filter } from 'rxjs/operators';
@@ -18,6 +18,8 @@ import { DropOpsatService } from '../../services/drop-opsat.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
   public activeContainers?: string[];
+  @ViewChild(CdkDropList)
+  public cdkDropList!: CdkDropList;
   private draging$ = new Subject<CdkDragMove<any>>();
   private subs = new SubSink();
   public constructor(
@@ -39,22 +41,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     // }).observe(this.el.nativeElement);
 
 
-    // this.subs.sink = this.opsat.activeContainer$.subscribe(key => {
-    //   this.activeContainers = [key];
-    //   console.log('activeContainers:', this.activeContainers);
-    //   // this.cdr.markForCheck();
-    //   this.cdr.detectChanges();
-    // });
+    this.subs.sink = this.opsat.activeContainer$.subscribe(key => {
+      this.activeContainers = [key];
+      console.log('activeContainers:', this.activeContainers);
+      this.cdr.markForCheck();
+      // this.cdr.detectChanges();
+      // this.cdkDropList['']
+      // console.log('title:', this.cdkDropList);
+    });
 
-    this.subs.sink = this.opsat.containers$
-      .pipe(delay(1000))
-      .pipe(filter(c => c?.length >= 3))
-      .subscribe(keys => {
-        this.activeContainers = keys;
-        console.log('activeContainers:', this.activeContainers);
-        // this.cdr.markForCheck();
-        this.cdr.detectChanges();
-      });
+    // this.subs.sink = this.opsat.containers$
+    //   // .pipe(delay(1000))
+    //   .pipe(filter(c => c?.length >= 3))
+    //   .subscribe(keys => {
+    //     this.activeContainers = keys;
+    //     console.log('activeContainers:', this.activeContainers);
+    //     // this.cdr.markForCheck();
+    //     this.cdr.detectChanges();
+    //   });
 
     this.subs.sink = this.draging$
       // .pipe(debounceTime(80))
@@ -81,7 +85,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
         // console.log('kkk:',containerKey);
         if (containerKey) {
+          console.log('1:',);
+          // this.cdkDropList['_setupInputSyncSubscription'](this.cdkDropList['_dropListRef']);
+          // this.cdkDropList['_dropListRef'].beforeStarted.next();
           this.opsat.activeContainer(containerKey);
+          this.cdr.detectChanges();
         }
       });
   }

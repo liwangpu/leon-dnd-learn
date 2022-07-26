@@ -1,12 +1,12 @@
-<ng-container *ngIf="activeContainers?.length">
+<!-- <ng-container *ngIf="activeContainers?.length">
   <div class="left" cdkDropList [cdkDropListConnectedTo]="activeContainers!" id="defaultContainer">
     <div class="com" cdkDrag (cdkDragMoved)="onDraging($event)"></div>
   </div>
-</ng-container>
+</ng-container> -->
 
-<!-- <div class="left" cdkDropList [cdkDropListConnectedTo]="activeContainers!" id="defaultContainer">
+<div class="left" cdkDropList [cdkDropListConnectedTo]="activeContainers!" id="defaultContainer">
   <div class="com" cdkDrag (cdkDragMoved)="onDraging($event)"></div>
-</div> -->
+</div>
 
 <div class="right">
   <app-drop-container>

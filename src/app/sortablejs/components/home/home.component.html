@@ -1,32 +1,34 @@
 <!-- <div id="simpleList" class="list-group">
-  <div class="list-group-item">This is demo</div>
-  <div class="list-group-item">It works with Bootstrap...</div>
-  <div class="list-group-item">...out of the box.</div>
-  <div class="list-group-item">It has support for touch devices.</div>
-  <div class="list-group-item">Just drag some elements around.</div>
+  <div class="list-group-drag-item">This is demo</div>
+  <div class="list-group-drag-item">It works with Bootstrap...</div>
+  <div class="list-group-drag-item">...out of the box.</div>
+  <div class="list-group-drag-item">It has support for touch devices.</div>
+  <div class="list-group-drag-item">Just drag some elements around.</div>
 </div> -->
 <div class="header">
   <button (click)="addToList1()">添加到List 1</button>
 </div>
 
 <div class="content">
-  
+
   <div class="list" id="list1">
-    <div class="item" *ngFor="let it of todos">{{it}}</div>
-    <!-- <div class="item">This is demo 1</div>
-    <div class="item">This is demo 2</div>
-    <div class="item">This is demo 3</div>
-    <div class="item">This is demo 4</div> -->
+    <div class="drag-item" *ngFor="let it of todos">{{it}}</div>
+    <!-- <div class="drag-item">This is demo 1</div>
+    <div class="drag-item">This is demo 2</div>
+    <div class="drag-item">This is demo 3</div>
+    <div class="drag-item">This is demo 4</div> -->
   </div>
 
   <div class="list" id="list2">
-    <div class="item">This is demo 1</div>
-    <div class="item">This is demo 2</div>
-    <div class="item">This is demo 3</div>
-    <div class="item">This is demo 4</div>
+    <div class="drag-item">This is demo 1</div>
+    <div class="drag-item">This is demo 2</div>
+    <div class="drag-item">This is demo 3</div>
+    <div class="drag-item">This is demo 4</div>
   </div>
 
   <app-container class="container">
-    
+    <app-container>
+
+    </app-container>
   </app-container>
 </div>

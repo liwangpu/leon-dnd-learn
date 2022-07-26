@@ -1,10 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy, HostBinding, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, HostBinding, OnDestroy, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { DropOpsatService } from '../../services/drop-opsat.service';
 import * as _ from 'lodash';
 import * as faker from 'faker';
 import { IDropContainer } from '../../models/i-drop-container';
 import { SubSink } from 'subsink';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, CdkDropList, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-drop-container',
@@ -35,7 +35,7 @@ export class DropContainerComponent implements IDropContainer, OnInit, OnDestroy
       .subscribe(key => {
         this.active = key === this.key;
         // this.cdr.markForCheck();
-        this.cdr.detectChanges();
+        // this.cdr.detectChanges();
       });
   }
 

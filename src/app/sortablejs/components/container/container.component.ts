@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild, ElementRef } from '@angular/core';
 import Sortable from 'sortablejs';
 
 @Component({
@@ -9,10 +9,12 @@ import Sortable from 'sortablejs';
 })
 export class ContainerComponent implements OnInit {
 
+  @ViewChild('list', { static: true })
+  public list!: ElementRef;
   constructor() { }
 
   ngOnInit(): void {
-    new Sortable(document.getElementById('list3')!, {
+    new Sortable(this.list.nativeElement, {
       group: 'shared', // set both lists to same group
       animation: 150
     });

@@ -10,8 +10,8 @@ const routes: Routes = [
     path: 'sortablejs',
     loadChildren: () => import('./sortablejs/sortablejs.module').then(m => m.SortablejsModule)
   },
-  { path: '', pathMatch: 'full', redirectTo: 'sortablejs' },
-  { path: '**', redirectTo: 'sortablejs' }
+  { path: '', pathMatch: 'full', redirectTo: 'cdk-dnd' },
+  { path: '**', redirectTo: 'cdk-dnd' }
 ];
 
 @NgModule({
