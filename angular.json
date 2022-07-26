@@ -118,6 +118,41 @@
           }
         }
       }
+    },
+    "ngx-sortablejs": {
+      "projectType": "library",
+      "root": "projects/ngx-sortablejs",
+      "sourceRoot": "projects/ngx-sortablejs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-sortablejs/tsconfig.lib.json",
+            "project": "projects/ngx-sortablejs/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-sortablejs/src/test.ts",
+            "tsConfig": "projects/ngx-sortablejs/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-sortablejs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-sortablejs/tsconfig.lib.json",
+              "projects/ngx-sortablejs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "tutorial"

@@ -20,7 +20,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-sortablejs": [
+        "./projects/ngx-sortablejs"
+      ],
+      "ngx-sortablejs/*": [
+        "./projects/ngx-sortablejs/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

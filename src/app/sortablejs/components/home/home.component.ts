@@ -30,18 +30,20 @@ export class HomeComponent implements OnInit {
     new Sortable(document.getElementById('list1')!, {
       group: {
         name: 'shared',
-        pull: 'clone'
+        pull: 'clone',
+        put: false
       },
+      sort: false,
       animation: 150,
       onEnd(event) {
         console.log('end:', event);
       },
     });
 
-    new Sortable(document.getElementById('list2')!, {
-      group: 'shared', // set both lists to same group
-      animation: 150
-    });
+    // new Sortable(document.getElementById('list2')!, {
+    //   group: 'shared', // set both lists to same group
+    //   animation: 150
+    // });
   }
 
   public addToList1(): void {
