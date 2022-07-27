@@ -41,24 +41,24 @@ export class HomeComponent implements OnInit, OnDestroy {
     // }).observe(this.el.nativeElement);
 
 
-    this.subs.sink = this.opsat.activeContainer$.subscribe(key => {
-      this.activeContainers = [key];
-      console.log('activeContainers:', this.activeContainers);
-      this.cdr.markForCheck();
-      // this.cdr.detectChanges();
-      // this.cdkDropList['']
-      // console.log('title:', this.cdkDropList);
-    });
+    // this.subs.sink = this.opsat.activeContainer$.subscribe(key => {
+    //   this.activeContainers = [key];
+    //   console.log('activeContainers:', this.activeContainers);
+    //   this.cdr.markForCheck();
+    //   // this.cdr.detectChanges();
+    //   // this.cdkDropList['']
+    //   // console.log('title:', this.cdkDropList);
+    // });
 
-    // this.subs.sink = this.opsat.containers$
-    //   // .pipe(delay(1000))
-    //   .pipe(filter(c => c?.length >= 3))
-    //   .subscribe(keys => {
-    //     this.activeContainers = keys;
-    //     console.log('activeContainers:', this.activeContainers);
-    //     // this.cdr.markForCheck();
-    //     this.cdr.detectChanges();
-    //   });
+    this.subs.sink = this.opsat.containers$
+      // .pipe(delay(1000))
+      // .pipe(filter(c => c?.length >= 3))
+      .subscribe(keys => {
+        this.activeContainers = keys.reverse();
+        console.log('activeContainers:', this.activeContainers);
+        // this.cdr.markForCheck();
+        this.cdr.detectChanges();
+      });
 
     this.subs.sink = this.draging$
       // .pipe(debounceTime(80))
@@ -85,11 +85,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
         // console.log('kkk:',containerKey);
         if (containerKey) {
-          console.log('1:',);
+          // console.log('1:',);
           // this.cdkDropList['_setupInputSyncSubscription'](this.cdkDropList['_dropListRef']);
           // this.cdkDropList['_dropListRef'].beforeStarted.next();
           this.opsat.activeContainer(containerKey);
-          this.cdr.detectChanges();
+          // this.cdr.detectChanges();
         }
       });
   }
