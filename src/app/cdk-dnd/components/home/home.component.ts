@@ -32,6 +32,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
   }
 
+  public back(): void {
+    console.log('hi:', history.length);
+  }
+
   public ngOnInit(): void {
     // console.log('el:', this.el.nativeElement);
 

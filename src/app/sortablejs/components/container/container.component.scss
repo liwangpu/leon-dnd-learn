@@ -2,6 +2,8 @@
   display: block;
 
   div.list {
+    display: flex;
+    flex-flow: column;
     min-height: 300px;
     background-color: pink;
 
@@ -12,6 +14,13 @@
       user-select: none;
       margin-bottom: -1px;
       background-color: #fff;
+    }
+
+    div.wrapper {
+      flex: 1;
+      background-color: orange;
+      // margin-bottom: 20px;
+      padding: 20px;
     }
   }
 }

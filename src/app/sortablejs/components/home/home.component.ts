@@ -35,8 +35,49 @@ export class HomeComponent implements OnInit {
       },
       sort: false,
       animation: 150,
-      onEnd(event) {
-        console.log('end:', event);
+      setData: function (/** DataTransfer */dataTransfer, /** HTMLElement*/dragEl: any) {
+        console.log('set data dragEl:', dragEl);
+        console.log('set data dataTransfer:', dataTransfer);
+        // dataTransfer.setData('Text', dragEl.textContent); // `dataTransfer` object of HTML5 DragEvent
+        dataTransfer.setData('Text', '1235453'); // `dataTransfer` object of HTML5 DragEvent
+      },
+      onStart(evt) {
+        // console.log('start:', evt);
+      },
+      onEnd(e: any) {
+        var itemEl = e.item;  // dragged HTMLElement
+        // e.to;    // target list
+        // e.from;  // previous list
+        // e.oldIndex;  // element's old index within old parent
+        // e.newIndex;  // element's new index within new parent
+        // e.oldDraggableIndex; // element's old index within old parent, only counting draggable elements
+        // e.newDraggableIndex; // element's new index within new parent, only counting draggable elements
+        // e.clone // the clone element
+        // e.pullMode;  // when item is in another sortable: `"clone"` if cloning, `true` if moving
+        // console.log('e:',e);
+        // console.log('end:', (e.originalEvent as DragEvent).dataTransfer?.getData('Text'));
+        // console.log('itemEl:', itemEl);
+        // let condition = true // Your condition here
+        // if (condition) {
+        //   itemEl.parentElement.removeChild(itemEl);
+        //   return;
+        // }
+      },
+      onMove: function (/**Event*/evt, /**Event*/originalEvent) {
+        // Example: https://jsbin.com/nawahef/edit?js,output
+        evt.dragged; // dragged HTMLElement
+        evt.draggedRect; // DOMRect {left, top, right, bottom}
+        evt.related; // HTMLElement on which have guided
+        evt.relatedRect; // DOMRect
+        evt.willInsertAfter; // Boolean that is true if Sortable will insert drag element after target by default
+        // originalEvent.clientY; // mouse position
+        // return false; — for cancel
+        // return -1; — insert before target
+        // return 1; — insert after target
+        // return true; — keep default insertion point based on the direction
+        // return void; — keep default insertion point based on the direction
+        // console.log('move:', evt);
+        return true;
       },
     });
 

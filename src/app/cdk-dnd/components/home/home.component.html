@@ -3,8 +3,8 @@
     <div class="com" cdkDrag (cdkDragMoved)="onDraging($event)"></div>
   </div>
 </ng-container> -->
-
-<div class="left" cdkDropList [cdkDropListConnectedTo]="activeContainers!" id="defaultContainer">
+<button (click)="back()">返回</button>
+<!-- <div class="left" cdkDropList [cdkDropListConnectedTo]="activeContainers!" id="defaultContainer">
   <div class="com" cdkDrag (cdkDragMoved)="onDraging($event)"></div>
 </div>
 
@@ -17,3 +17,13 @@
     </app-drop-container>
   </app-drop-container>
 </div>
+
+<div class="right">
+  <app-drop-container>
+    <app-drop-container>
+      <app-drop-container>
+
+      </app-drop-container>
+    </app-drop-container>
+  </app-drop-container>
+</div> -->

@@ -7,8 +7,9 @@ import { ChangeDetectionStrategy, Component, DoCheck } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements DoCheck {
+  
   public ngDoCheck(): void {
-    console.log('do check',);
+    // console.log('do check',);
   }
 
 }
