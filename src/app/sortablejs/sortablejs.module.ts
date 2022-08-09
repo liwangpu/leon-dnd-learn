@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { SortablejsRoutingModule } from './sortablejs-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ContainerComponent } from './components/container/container.component';
+import { SimpleComponent } from './components/simple/simple.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ContainerComponent
+    ContainerComponent,
+    SimpleComponent
   ],
   imports: [
     CommonModule,
