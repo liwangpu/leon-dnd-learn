@@ -1,0 +1,4 @@
+<div class="container" (drop)="onDrop($event)" (dragover)="onDragOver($event)" [id]="id">
+  <div class="item" *ngFor="let it of list" draggable="true" (dragstart)="onDragStart($event)" (drag)="onDrag($event)" [id]="it">
+    {{it}}</div>
+</div>

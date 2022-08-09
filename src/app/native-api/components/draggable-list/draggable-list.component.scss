@@ -1,0 +1,18 @@
+:host {
+  display: block;
+  width: 200px;
+  border: 1px solid #cacdd1;
+
+  div.container {
+    &>.item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 42px;
+      background-color: #fff;
+      border: 1px solid #cacdd1;
+      margin: -1px -1px -1px;
+      // opacity: 1;
+    }
+  }
+}
