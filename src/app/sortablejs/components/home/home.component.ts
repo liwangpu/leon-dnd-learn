@@ -40,6 +40,14 @@ export class HomeComponent implements OnInit {
         console.log('set data dataTransfer:', dataTransfer);
         // dataTransfer.setData('Text', dragEl.textContent); // `dataTransfer` object of HTML5 DragEvent
         dataTransfer.setData('Text', '1235453'); // `dataTransfer` object of HTML5 DragEvent
+        
+        // const crt = document.createElement('div');
+        // crt.style.backgroundColor = "black";
+        // crt.style.width = "200px";
+        // crt.style.height = "200px";
+        // // crt.style.backgroundColor="linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(9,9,121,1) 100%, rgba(0,212,255,1) 100%)";
+        // document.body.appendChild(crt);
+        // dataTransfer.setDragImage(crt, 0, 0);
       },
       onStart(evt) {
         // console.log('start:', evt);

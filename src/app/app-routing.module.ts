@@ -10,8 +10,12 @@ const routes: Routes = [
     path: 'sortablejs',
     loadChildren: () => import('./sortablejs/sortablejs.module').then(m => m.SortablejsModule)
   },
-  { path: '', pathMatch: 'full', redirectTo: 'sortablejs' },
-  { path: '**', redirectTo: 'sortablejs' }
+  {
+    path: 'native-api',
+    loadChildren: () => import('./native-api/native-api.module').then(m => m.NativeApiModule)
+  },
+  { path: '', pathMatch: 'full', redirectTo: 'native-api' },
+  { path: '**', redirectTo: 'native-api' }
 ];
 
 @NgModule({
