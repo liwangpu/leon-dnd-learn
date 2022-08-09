@@ -5,13 +5,15 @@ import { SortablejsRoutingModule } from './sortablejs-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { ContainerComponent } from './components/container/container.component';
 import { SimpleComponent } from './components/simple/simple.component';
+import { SimpleListComponent } from './components/simple-list/simple-list.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     ContainerComponent,
-    SimpleComponent
+    SimpleComponent,
+    SimpleListComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+  width: 200px;
+
+  &>.drag-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    border: 1px solid #cacdd1;
+  }
+}
